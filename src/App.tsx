@@ -42,20 +42,20 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8 px-4">
+    <div className="min-h-screen bg-stone-800 py-8 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-center mb-8 gap-3">
           <FlagTriangleRight className="h-8 w-8 text-red-600" />
-          <h1 className="text-3xl font-bold text-gray-800">AIMS Incident Report Generator</h1>
+          <h1 className="text-3xl font-bold text-neutral-100">AIMS Incident Report Generator</h1>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Input Form */}
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h2 className="text-xl font-semibold mb-4">Report Details</h2>
+          <div className="bg-neutral-700 rounded-lg outline outline-2 outline-neutral-600 p-6">
+            <h2 className="text-xl font-semibold text-neutral-100 mb-4">Report Details</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-neutral-100 mb-1">
                   Reporting Driver
                 </label>
                 <input
@@ -63,12 +63,12 @@ function App() {
                   name="reportingDriver"
                   value={report.reportingDriver}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                  className="w-full px-3 py-2 rounded-md"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-neutral-100 mb-1">
                   Drivers Involved
                 </label>
                 <input
@@ -76,12 +76,12 @@ function App() {
                   name="driversInvolved"
                   value={report.driversInvolved}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                  className="w-full px-3 py-2 rounded-md"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-neutral-100 mb-1">
                   Race Info
                 </label>
                 <input
@@ -89,12 +89,12 @@ function App() {
                   name="raceInfo"
                   value={report.raceInfo}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                  className="w-full px-3 py-2 rounded-md"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-neutral-100 mb-1">
                   Incident Description
                 </label>
                 <textarea
@@ -102,12 +102,12 @@ function App() {
                   value={report.incidentDescription}
                   onChange={handleInputChange}
                   rows={4}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                  className="w-full px-3 py-2 rounded-md"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-neutral-100 mb-1">
                   Ruling Decision
                 </label>
                 <input
@@ -115,12 +115,12 @@ function App() {
                   name="rulingDecision"
                   value={report.rulingDecision}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                  className="w-full px-3 py-2 rounded-md"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-neutral-100 mb-1">
                   Explanation
                 </label>
                 <textarea
@@ -128,7 +128,7 @@ function App() {
                   value={report.explanation}
                   onChange={handleInputChange}
                   rows={4}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                  className="w-full px-3 py-2 rounded-md"
                 />
               </div>
             </div>
@@ -136,46 +136,46 @@ function App() {
 
           {/* Generated Report */}
           <div>
-            <div className="bg-white rounded-lg shadow-md p-6 mb-4" ref={reportRef}>
+            <div className="bg-neutral-700 rounded-lg border-2 border-neutral-600 p-6 mb-4" ref={reportRef}>
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-2">
                   <Flag className="h-6 w-6 text-red-600" />
-                  <h2 className="text-2xl font-bold">AIMS Racing Incident Report</h2>
+                  <h2 className="text-2xl font-bold text-neutral-100">AIMS Racing Incident Report</h2>
                 </div>
-                <div className="text-sm text-gray-500">
+                <div className="text-sm text-neutral-300">
                   {new Date().toLocaleDateString()}
                 </div>
               </div>
 
               <div className="space-y-4">
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-600">REPORTING DRIVER</h3>
-                  <p className="text-gray-800">{report.reportingDriver || 'Not specified'}</p>
+                  <h3 className="text-sm font-semibold text-neutral-400">REPORTING DRIVER</h3>
+                  <p className="text-neutral-100">{report.reportingDriver || 'Not specified'}</p>
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-600">DRIVERS INVOLVED</h3>
-                  <p className="text-gray-800">{report.driversInvolved || 'Not specified'}</p>
+                  <h3 className="text-sm font-semibold text-neutral-400">DRIVERS INVOLVED</h3>
+                  <p className="text-neutral-100">{report.driversInvolved || 'Not specified'}</p>
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-600">RACE INFORMATION</h3>
-                  <p className="text-gray-800">{report.raceInfo || 'Not specified'}</p>
+                  <h3 className="text-sm font-semibold text-neutral-400">RACE INFORMATION</h3>
+                  <p className="text-neutral-100">{report.raceInfo || 'Not specified'}</p>
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-600">INCIDENT DESCRIPTION</h3>
-                  <p className="text-gray-800 whitespace-pre-line">{report.incidentDescription || 'Not specified'}</p>
+                  <h3 className="text-sm font-semibold text-neutral-400">INCIDENT DESCRIPTION</h3>
+                  <p className="text-neutral-100 whitespace-pre-line">{report.incidentDescription || 'Not specified'}</p>
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-600">RULING DECISION</h3>
-                  <p className="text-gray-800">{report.rulingDecision || 'Not specified'}</p>
+                  <h3 className="text-sm font-semibold text-neutral-400">RULING DECISION</h3>
+                  <p className="text-neutral-100">{report.rulingDecision || 'Not specified'}</p>
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-600">EXPLANATION</h3>
-                  <p className="text-gray-800 whitespace-pre-line">{report.explanation || 'Not specified'}</p>
+                  <h3 className="text-sm font-semibold text-neutral-400">EXPLANATION</h3>
+                  <p className="text-neutral-100 whitespace-pre-line">{report.explanation || 'Not specified'}</p>
                 </div>
               </div>
             </div>
