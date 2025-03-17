@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { toPng } from "html-to-image";
-import { ClipboardList, Flag, Download } from "lucide-react";
+import { ClipboardList, Download, Flag, List, ListChecks } from "lucide-react";
 
 interface IncidentReport {
   reportingDriver: string;
@@ -46,9 +46,9 @@ function App() {
   return (
     <div className="">
       <div id="body-inner-container">
-        <header className="py-8 flex items-center justify-center">
+        <header className="py-8 md:py-12 lg:py-24 flex items-center justify-center">
           <div className="flex items-center gap-2">
-            <Flag className="size-10 text-accent" />
+            <Flag className="size-6 lg:size-10 text-accent" />
             <h1>AIMS Incident Report Generator</h1>
           </div>
         </header>
@@ -57,7 +57,7 @@ function App() {
           {/* Input Form */}
           <section className="bg-muted rounded-lg border border-border p-6 space-y-4">
             <div className="flex items-center gap-2">
-              <ClipboardList className="size-8 text-accent" />
+              <ClipboardList className="size-6 lg:size-8 text-accent" />
               <h2>Report Details</h2>
             </div>
             <div className="space-y-4">
@@ -166,7 +166,7 @@ function App() {
           >
             <header className="mb-6 grid gap-2">
               <div className="flex items-center gap-2">
-                <Flag className="size-8 text-accent" />
+                <ListChecks className="size-6 lg:size-8 text-accent" />
                 <h2>AIMS Racing Incident Report</h2>
               </div>
               <p>Report Date: {new Date().toLocaleDateString()}</p>
