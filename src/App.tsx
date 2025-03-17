@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { toPng } from "html-to-image";
-import { Flag, Download, FlagTriangleRight } from "lucide-react";
+import { ClipboardList, Flag, Download, FlagTriangleRight } from "lucide-react";
 
 interface IncidentReport {
   reportingDriver: string;
@@ -44,21 +44,24 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-800 py-8 px-4">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex items-center justify-center mb-8 gap-3">
-          <FlagTriangleRight className="h-8 w-8 text-red-600" />
-          <h1 className="text-3xl font-bold text-zinc-100">
-            AIMS Incident Report Generator
-          </h1>
-        </div>
+    <div className="">
+      <div id="body-inner-container">
+        <header className="py-8 flex items-center justify-center">
+          <div className="flex items-center gap-2">
+            <FlagTriangleRight className="h-8 w-8 text-accent" />
+            <h1>AIMS Incident Report Generator</h1>
+          </div>
+        </header>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <main className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Input Form */}
-          <div className="bg-zinc-700 rounded-lg outline outline-2 outline-zinc-600 p-6">
-            <h2 className="text-xl font-semibold text-zinc-100 mb-4">
-              Report Details
-            </h2>
+          <section className="bg-muted rounded-lg outline outline-2 outline-zinc-600 p-6">
+            <div className="flex items-center gap-2">
+              <ClipboardList className="h-6 w-6 text-red-600" />
+              <h2 className="text-xl font-semibold text-zinc-100 mb-4">
+                Report Details
+              </h2>
+            </div>
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-zinc-100 mb-1">
@@ -138,7 +141,7 @@ function App() {
                 />
               </div>
             </div>
-          </div>
+          </section>
 
           {/* Generated Report */}
           <div>
@@ -223,7 +226,7 @@ function App() {
               Export as Image
             </button>
           </div>
-        </div>
+        </main>
       </div>
     </div>
   );

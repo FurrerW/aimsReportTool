@@ -2,7 +2,91 @@
 @tailwind components;
 @tailwind utilities;
 
-input,
-textarea {
-    @apply bg-neutral-400 text-neutral-900
+@layer base {
+  :root {
+    --color-background: 240 5.9% 10%;
+    --color-foreground: 0 0% 98%;
+    --color-foreground-muted: 240 5% 64.9%;
+
+    --color-muted: 240 3.7% 15.9%;
+    --color-muted-foreground: 240 5% 64.9%;
+
+    --color-primary: 0 0% 98%;
+    --color-primary-foreground: 240 10% 3.9%;
+
+    --color-secondary: 0 0% 89.8%;
+    --color-secondary-foreground: 240 10% 3.9%;
+
+    --color-success: 141.9 69.2% 58%;
+    --color-success-foreground: 144.9 80.4% 10%;
+
+    --color-warning: 43.3 96.4% 56.3%;
+    --color-warning-foreground: 20.9 91.7% 14.1%;
+
+    --color-error: 0 90.6% 70.8%;
+    --color-error-foreground: 0 74.7% 15.5%;
+
+    --color-border: 240 4.9% 83.9%;
+    --color-outline: 240 4.9% 83.9%;
+    --color-ring: 240 5% 64.9%;
+
+    --color-accent: 0 72.2% 50.6%;
+  }
+  * {
+    @apply min-w-0;
+  }
+
+  body {
+    @apply bg-background text-foregroundMuted;
+  }
+
+  #body-inner-container {
+    @apply max-w-screen-xl mx-auto p-4;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply leading-none tracking-tight text-foreground font-semibold;
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transform: none !important;
+  }
+}
+
+@media (prefers-contrast: more) {
+  *,
+  *::before,
+  *::after {
+    opacity: 100% !important;
+  }
+
+  a:hover {
+    text-decoration: underline !important;
+  }
 }
