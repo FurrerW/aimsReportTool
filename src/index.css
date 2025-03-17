@@ -26,11 +26,12 @@
     --color-error: 0 90.6% 70.8%;
     --color-error-foreground: 0 74.7% 15.5%;
 
-    --color-border: 240 4.9% 83.9%;
+    --color-border: 240 5% 64.9%;
     --color-outline: 240 4.9% 83.9%;
     --color-ring: 240 5% 64.9%;
 
     --color-accent: 0 72.2% 50.6%;
+    --color-accent-foreground: 0 0% 98%;
   }
   * {
     @apply min-w-0;
@@ -60,6 +61,30 @@
 
   h3 {
     @apply text-2xl;
+  }
+
+  input,
+  textarea {
+    @apply bg-transparent border border-border text-foreground focus:outline-none w-full p-2 rounded-md placeholder:text-foregroundMuted focus:border-primary transition-colors;
+  }
+
+  input:not(:placeholder-shown):valid,
+  textarea:not(:placeholder-shown):valid {
+    @apply border-success;
+  }
+
+  input:not(:placeholder-shown):invalid,
+  textarea:not(:placeholder-shown):invalid {
+    @apply border-error;
+  }
+
+  label,
+  .report-label {
+    @apply text-foregroundMuted uppercase text-xs font-semibold;
+  }
+
+  .required:after {
+    @apply content-['*'] text-error text-base;
   }
 }
 

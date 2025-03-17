@@ -23,6 +23,7 @@ export default {
         outline: "hsl(var(--color-outline))",
         ring: "hsl(var(--color-ring))",
         accent: "hsl(var(--color-accent))",
+        accentForeground: "hsl(var(--color-accent-foreground))",
       },
     },
   },
